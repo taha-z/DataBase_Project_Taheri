@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item m-2">
+                    <a href="{% url 'special_sale_update' object.id %}" class="btn btn-outline-info btn-sm">Update</a>
+                </li>
+                <li class="nav-item m-2">
+                    <a href="{% url 'special_sale_delete' object.id %}" class="btn btn-outline-danger btn-sm">Delete</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="card-body">
+            <table style=" border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;">
+                <tr>
+                    <th style="width:50%">Features</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>{{ object.id }}</td>
+                </tr>
+                <tr>
+                    <td>sales_name</td>
+                    <td>{{ object.sales_name }}</td>
+                </tr>
+                <tr>
+                    <td>discount</td>
+                    <td>{{ object.discount }}</td>
+                </tr>
+                <tr>
+                    <td>starting_date</td>
+                    <td>{{ object.starting_date }}</td>
+                </tr>
+                <tr>
+                    <td>ending_date</td>
+                    <td>{{ object.ending_date }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}

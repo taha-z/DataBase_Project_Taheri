@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item m-2">
+                    <a href="{% url 'keyboard_update' object.id %}" class="btn btn-outline-info btn-sm">Update</a>
+                </li>
+                <li class="nav-item m-2">
+                    <a href="{% url 'keyboard_delete' object.id %}" class="btn btn-outline-danger btn-sm">Delete</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="card-body">
+            <table style=" border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;">
+                <tr>
+                    <th style="width:50%">Features</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>id</td>
+                    <td>{{ object.id }}</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>{{ object.name }}</td>
+                </tr>
+                <tr>
+                    <td>color</td>
+                    <td>{{ object.color }}</td>
+                </tr>
+                <tr>
+                    <td>quantity</td>
+                    <td>{{ object.quantity }}</td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>{{ object.description }}</td>
+                </tr>
+                <tr>
+                    <td>weight</td>
+                    <td>{{ object.weight }}</td>
+                </tr>
+                <tr>
+                    <td>brand</td>
+                    <td>{{ object.brand }}</td>
+                </tr>
+                <tr>
+                    <td>price</td>
+                    <td>{{ object.price }}</td>
+                </tr>
+                <tr>
+                    <td>sold</td>
+                    <td>{{ object.sold }}</td>
+                </tr>
+                <tr>
+                    <td>spc_sale</td>
+                    <td>{{ object.spc_sale.id }}</td>
+                </tr>
+                <tr>
+                    <td>seller</td>
+                    <td>{{ object.seller.id }}</td>
+                </tr>
+                <tr>
+                    <td>rgb</td>
+                    <td>{{ object.rgb }}</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>{{ object.type }}</td>
+                </tr>
+                <tr>
+                    <td>acuuracy_range</td>
+                    <td>{{ object.acuuracy_range }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}
